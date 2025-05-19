@@ -1,181 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Metadata for the webpage -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="music, store, instruments, guitars, pianos, drums, accessories, sheet music, services">
-    <meta name="google" content="notranslate">
-    <title>THE Music Store</title>
-    
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="test.css">
-    
-    <!-- Script for checking JavaScript support -->
-    <script type="text/javascript">
-        alert("Your browser supports JavaScript!");
-    </script>
-    
-    <!-- Fallback message if JavaScript is not supported -->
-    <noscript>
-        Your browser does not support JavaScript. Please enable JavaScript for a better experience.
-    </noscript>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="music, store, instruments" />
+  <meta name="google" content="notranslate" />
+  <title>THE Music Store</title>
 
-    <style>
-        /* Basic Reset */
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+  <!-- Google Fonts: Fancy Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-        /* Navbar Style */
-        nav {
-            background-color: #f8d4e6; /* Light pink background */
-            overflow: hidden;
-        }
+  <!-- JavaScript Support -->
+  <script type="text/javascript">
+    alert("Your browser supports JavaScript!");
+  </script>
+  <noscript>
+    Your browser does not support JavaScript. Please enable JavaScript for the best experience.
+  </noscript>
 
-        /* Dropdown Container */
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #fff0f5;
+      color: #333;
+    }
 
-        /* Links inside the dropdown */
-        .dropdown a {
-            font-size: 16px;
-            color: white;
-            padding: 14px 16px;
-            text-decoration: none;
-            display: block;
-            background-color: #f8d4e6; /* Light pink as default */
-        }
+    header {
+      background-color: #f8d4e6;
+      color: #ff1a66;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-        /* Dropdown Content */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f8d4e6; /* Light pink background for dropdown */
-            min-width: 160px;
-            z-index: 1;
-        }
+    nav {
+      background-color: #f8d4e6;
+      overflow: hidden;
+    }
 
-        /* Show dropdown content on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
 
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-        }
+    .dropdown a {
+      font-size: 16px;
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: block;
+      background-color: #f8d4e6;
+    }
 
-        /* Hover effect for links in dropdown */
-        .dropdown-content a:hover {
-            background-color: #ff1a66; /* Hot pink for hover effect */
-            color: white;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f8d4e6;
+      min-width: 160px;
+      z-index: 1;
+    }
 
-        /* Main Header Style */
-        header {
-            background-color: #f8d4e6; /* Light pink background */
-            color: #ff1a66; /* Hot pink text */
-            text-align: center;
-            padding: 40px 20px;
-        }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-        }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
 
-        p {
-            font-size: 1.1rem;
-        }
+    .dropdown-content a:hover {
+      background-color: #ff1a66;
+      color: white;
+    }
 
-        /* Footer Style */
-        footer {
-            background-color: #f8d4e6; /* Light pink background */
-            color: #ff1a66; /* Hot pink text */
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    main {
+      padding: 20px 40px;
+      background-color: #fff0f5;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 300px;
+      background-color: #ffe4f0;
+      color: #ff1a66;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      font-size: 1.5rem;
+      border: 2px dashed #ff1a66;
+    }
+
+    footer {
+      background-color: #f8d4e6;
+      color: #ff1a66;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Welcome Message -->
-    <header>
-        <h1>Welcome to <span>&lt;&lt;THE Music Store&gt;&gt;</span></h1>
-        <p>Find the best musical instruments and accessories for every musician!</p>
-    </header>
 
-    <!-- Navigation Bar with Dropdowns for 6 Domains -->
-    <nav>
-        <div class="dropdown">
-            <a href="#">Guitars</a>
-            <div class="dropdown-content">
-                <a href="#">Acoustic Guitars</a>
-                <a href="#">Electric Guitars</a>
-                <a href="#">Bass Guitars</a>
-            </div>
-        </div>
+  <header>
+    <h1>Welcome to &lt;&lt;THE Music Store&gt;&gt;</h1>
+    <p>Find the best musical instruments and accessories for every musician!</p>
+  </header>
 
-        <div class="dropdown">
-            <a href="#">Pianos</a>
-            <div class="dropdown-content">
-                <a href="#">Grand Pianos</a>
-                <a href="#">Digital Pianos</a>
-                <a href="#">Upright Pianos</a>
-            </div>
-        </div>
+  <nav>
+    <div class="dropdown">
+      <a href="#">Domain 1</a>
+      <div class="dropdown-content">
+        <a href="#">Subdomain A</a>
+        <a href="#">Subdomain B</a>
+        <a href="#">Subdomain C</a>
+      </div>
+    </div>
 
-        <div class="dropdown">
-            <a href="#">Drums</a>
-            <div class="dropdown-content">
-                <a href="#">Drum Kits</a>
-                <a href="#">Cymbals</a>
-                <a href="#">Percussion</a>
-            </div>
-        </div>
+    <div class="dropdown">
+      <a href="#">Domain 2</a>
+      <div class="dropdown-content">
+        <a href="#">Subdomain A</a>
+        <a href="#">Subdomain B</a>
+        <a href="#">Subdomain C</a>
+      </div>
+    </div>
 
-        <div class="dropdown">
-            <a href="#">Accessories</a>
-            <div class="dropdown-content">
-                <a href="#">Guitar Strings</a>
-                <a href="#">Microphones</a>
-                <a href="#">Sheet Music Stands</a>
-            </div>
-        </div>
+    <div class="dropdown">
+      <a href="#">Domain 3</a>
+      <div class="dropdown-content">
+        <a href="#">Subdomain A</a>
+        <a href="#">Subdomain B</a>
+        <a href="#">Subdomain C</a>
+      </div>
+    </div>
 
-        <div class="dropdown">
-            <a href="#">Sheet Music</a>
-            <div class="dropdown-content">
-                <a href="#">Classical</a>
-                <a href="#">Jazz</a>
-                <a href="#">Pop</a>
-            </div>
-        </div>
+    <div class="dropdown">
+      <a href="#">Domain 4</a>
+      <div class="dropdown-content">
+        <a href="#">Subdomain A</a>
+        <a href="#">Subdomain B</a>
+        <a href="#">Subdomain C</a>
+      </div>
+    </div>
 
-        <div class="dropdown">
-            <a href="#">Services</a>
-            <div class="dropdown-content">
-                <a href="#">Repairs</a>
-                <a href="#">Lessons</a>
-                <a href="#">Customization</a>
-            </div>
-        </div>
-    </nav>
+    <div class="dropdown">
+      <a href="#">Domain 5</a>
+      <div class="dropdown-content">
+        <a href="#">Subdomain A</a>
+        <a href="#">Subdomain B</a>
+        <a href="#">Subdomain C</a>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 THE Music Store. All rights reserved.</p>
-    </footer>
+    <div class="dropdown">
+      <a href="#">Domain 6</a>
+      <div class="dropdown-content">
+        <a href="#">Subdomain A</a>
+        <a href="#">Subdomain B</a>
+        <a href="#">Subdomain C</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main text goes here -->
+  <main>
+    <!-- Image Placeholder -->
+    <div class="image-placeholder">
+      Picture goes here (e.g., store, instruments, banner)
+    </div>
+
+    <p>
+      Here at THE Music Store, we have the finest selection of instruments and accessories.
+      Whether you want to be the proud new owner of a guitar, piano, drums, a ukulele, a trombone, or even a kazoo,
+      you have come to the right place.
+    </p>
+
+    <p>
+      In addition to having a wide variety of instruments, we offer a whole host of music courses,
+      to help you learn how to play your new instrument well.
+      After all, we are sure you want to make good noise with your instruments.
+    </p>
+
+    <p>
+      And, we have a great selection of music books, sheet music, and other music accessories.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 THE Music Store. All rights reserved.</p>
+  </footer>
+<div class="image-placeholder">
+  Picture goes here (e.g., store, instruments, banner)
+    <img src="images/store-banner.jpg" alt="Music Store Banner" style="width: 100%; border: 2px solid #ff1a66;">
+
+</div>
+
 </body>
-
 </html>
