@@ -9,6 +9,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
 
   <style>
+    /* Loading screen styles */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffe6f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+      transition: opacity 0.5s ease;
+    }
+
+    #loading-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader {
+      border: 10px solid #ffcce6;
+      border-top: 10px solid #ff66b2;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      font-family: 'Playfair Display', serif;
+      color: #ff1a66;
+      font-size: 20px;
+    }
+
     body {
       font-family: 'Playfair Display', serif;
       background-color: #fff0f5;
@@ -65,6 +107,11 @@
       display: block;
     }
 
+    .dropdown-content ul {
+      margin: 0 0 10px 20px;
+      padding-left: 0;
+    }
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -87,12 +134,20 @@
     }
   </style>
 </head>
+
 <body>
 
+  <!-- 🌸 Cute loading screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <div class="loading-text">Loading your music magic...</div>
+  </div>
+
   <header>
-    <h1>Welcome to khloes music store !</h1>
+    <h1>Welcome to Khloe's music store!</h1>
   </header>
 
+  <!-- 🌺 Flower image -->
   <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png"
        alt="Pink Flower Icon" class="flower-img" />
 
@@ -105,7 +160,7 @@
         <p>Whether you want a guitar, piano, drums, ukulele, trombone, or even a kazoo — you're in the right place!</p>
         <p>We offer music courses to help you play your new instrument well.</p>
         <p>Courses available for:</p>
-        <ul style="margin: 0 0 10px 20px;">
+        <ul>
           <li>Guitar</li>
           <li>Piano</li>
           <li>Drums</li>
@@ -158,6 +213,14 @@
   <main>
     <p>Hover over "Domain 1" above to explore THE Music Store. More coming soon!</p>
   </main>
+
+  <!-- 💫 Hide loading screen when page loads -->
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("loading-screen");
+      loader.classList.add("hidden");
+    });
+  </script>
 
 </body>
 </html>
