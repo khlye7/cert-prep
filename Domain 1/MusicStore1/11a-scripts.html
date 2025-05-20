@@ -9,71 +9,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
     <style>
-        /* Global styles */
         body {
-            font-family: 'Playfair Display', serif; /* Fancy font */
-            background-color: #fff0f5; /* Light pink background */
-            color: #333; /* Default dark text */
-            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #fff0f5; /* Light pink */
+            color: #333;
             margin: 0;
+            padding: 0;
         }
 
         header {
-            background-color: #ffc1dc; /* Light pink header */
+            background-color: #ffc1dc;
             padding: 20px;
             text-align: center;
-            color: #ff1a66; /* Dark pink text */
+            color: #ff1a66;
         }
 
         h1 {
             margin: 0;
         }
 
-        /* Navbar styles */
+        .flower-img {
+            display: block;
+            margin: 20px auto;
+            max-width: 150px;
+        }
+
         nav {
-            background-color: #ff99cc; /* Light pink background for the navbar */
+            background-color: #ffbede;
             overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .dropdown {
-            float: left;
             position: relative;
         }
 
         .dropbtn {
-            font-family: 'Playfair Display', serif; /* Fancy font for dropdown buttons */
-            background-color: #ff99cc; /* Light pink background */
-            color: white; /* White text on the button */
-            padding: 14px 16px;
+            background-color: #ffe3f1;
+            color: white;
+            padding: 14px 20px;
             font-size: 16px;
             border: none;
             cursor: pointer;
+            font-family: 'Playfair Display', serif;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #ffe6f0; /* Light pink dropdown content */
-            min-width: 160px;
+            background-color: #ffe6f0;
+            min-width: 250px;
+            padding: 15px;
+            box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2);
             z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: #ff1a66; /* Dark pink text for links */
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ffcce0; /* Lighter pink when hovering over links */
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        /* Main content styles */
+        .dropdown-content p, .dropdown-content ul {
+            margin: 10px 0;
+        }
+
+        .dropdown-content ul {
+            padding-left: 20px;
+        }
+
         main {
             padding: 20px;
             max-width: 800px;
@@ -85,97 +88,89 @@
             line-height: 1.6;
         }
 
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
+        @media (max-width: 600px) {
+            .dropbtn {
+                padding: 10px;
+                font-size: 14px;
+            }
 
-        li {
-            margin-bottom: 8px;
+            .dropdown-content {
+                min-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to <<THE Music Store>></h1>
+        <h1>Welcome to &lt;&lt;THE Music Store&gt;&gt;</h1>
     </header>
 
+    <!-- Flower image under header -->
+    <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png"
+         alt="Pink Flower Icon" class="flower-img">
+
     <nav>
+        <!-- Domain 1 -->
         <div class="dropdown">
             <button class="dropbtn">Domain 1</button>
             <div class="dropdown-content">
-                <!-- Your content for Domain 1 goes here -->
-                <p>
-                    Here at THE Music Store, we have the finest selection of instruments and accessories.
-                    Whether you want to be the proud new owner of a guitar, piano, drums, a ukulele, a trombone, or even a kazoo,
-                    you have come to the right place.
-                </p>
-                <p>
-                    In addition to having a wide variety of instruments, we offer a whole host of music courses,
-                    to help you learn how to play your new instrument well. After all, we are sure you want to make good noise with
-                    your instruments.
-                </p>
-                <p>
-                    And, we have a great selection of music books, sheet music, and other music accessories.
-                </p>
-                <p>
-                    We currently offer courses for the following instruments:
-                </p>
+                <p>Here at THE Music Store, we have the finest selection of instruments and accessories.</p>
+                <p>Whether you want a guitar, piano, drums, a ukulele, a trombone, or even a kazoo — you're in the right place!</p>
+                <p>We also offer music courses to help you play your instrument well.</p>
+                <p>We currently offer courses for:</p>
                 <ul>
                     <li>Guitar</li>
                     <li>Piano</li>
                     <li>Drums</li>
                 </ul>
+                <p>Plus books, sheet music, and accessories galore!</p>
             </div>
         </div>
+
+        <!-- Domain 2 -->
         <div class="dropdown">
             <button class="dropbtn">Domain 2</button>
             <div class="dropdown-content">
-                <a href="#">Link 2A</a>
-                <a href="#">Link 2B</a>
-                <a href="#">Link 2C</a>
+                <p>(Coming soon)</p>
             </div>
         </div>
+
+        <!-- Domain 3 -->
         <div class="dropdown">
             <button class="dropbtn">Domain 3</button>
             <div class="dropdown-content">
-                <a href="#">Link 3A</a>
-                <a href="#">Link 3B</a>
-                <a href="#">Link 3C</a>
+                <p>(Coming soon)</p>
             </div>
         </div>
+
+        <!-- Domain 4 -->
         <div class="dropdown">
             <button class="dropbtn">Domain 4</button>
             <div class="dropdown-content">
-                <a href="#">Link 4A</a>
-                <a href="#">Link 4B</a>
-                <a href="#">Link 4C</a>
+                <p>(Coming soon)</p>
             </div>
         </div>
+
+        <!-- Domain 5 -->
         <div class="dropdown">
             <button class="dropbtn">Domain 5</button>
             <div class="dropdown-content">
-                <a href="#">Link 5A</a>
-                <a href="#">Link 5B</a>
-                <a href="#">Link 5C</a>
+                <p>(Coming soon)</p>
             </div>
         </div>
+
+        <!-- Domain 6 -->
         <div class="dropdown">
             <button class="dropbtn">Domain 6</button>
             <div class="dropdown-content">
-                <a href="#">Link 6A</a>
-                <a href="#">Link 6B</a>
-                <a href="#">Link 6C</a>
+                <p>(Coming soon)</p>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Main content goes here -->
-        <p>
-            Welcome to the best music store around! Explore our musical instrument and course offerings.
-        </p>
+        <p>Hover over "Domain 1" to explore what THE Music Store offers. More content coming soon in other domains!</p>
     </main>
 
 </body>
