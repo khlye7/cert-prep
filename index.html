@@ -1,183 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Khloe's Music Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
   <style>
+    /* Loading screen styles */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffe6f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+      transition: opacity 0.5s ease;
+    }
+    #loading-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loader {
+      border: 10px solid #ffcce6;
+      border-top: 10px solid #ff66b2;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .loading-text {
+      font-family: 'Playfair Display', serif;
+      color: #ff1a66;
+      font-size: 20px;
+    }
+
+    /* Petal styles */
+    .petal {
+      position: fixed;
+      top: -40px;
+      width: 20px;
+      height: 20px;
+      background-image: url('https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png');
+      background-size: cover;
+      z-index: 1;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
     body {
+      font-family: 'Playfair Display', serif;
+      background-color: #fff0f5;
       margin: 0;
       padding: 0;
-      font-family: 'Pacifico', cursive;
-      background-color: #fff0f6;
-      color: #333;
-      text-align: center;
-      font-weight: 300;
     }
 
     header {
-      background-color: #ffcce2;
-      padding: 40px 20px 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ffccdd;
+      padding: 20px;
+      text-align: center;
     }
 
     header h1 {
+      margin: 0;
       color: #cc0066;
-      font-size: 3em;
-      margin: 0 0 10px;
-      font-weight: 300;
     }
 
     .flower-img {
-      width: 90px;
-      height: auto;
+      display: block;
+      margin: 20px auto;
+      width: 80px;
     }
 
-    nav {
-      background-color: #ffcce2;
-      padding: 15px 0;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+    main {
+      text-align: center;
+      padding: 20px;
     }
 
-    .dropdown-container {
+    .dropdown {
       position: relative;
       display: inline-block;
-    }
-
-    .dropdown-button {
-      background-color: #ff99c8;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: 300;
-      font-size: 1rem;
-      transition: background-color 0.3s;
-    }
-
-    .dropdown-button:hover {
-      background-color: #e673a1;
+      margin: 10px;
     }
 
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
       background-color: #ffe6f0;
-      min-width: 220px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
-      padding: 12px;
-      z-index: 1;
-      text-align: left;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      padding: 10px;
+      z-index: 2;
     }
 
-    .dropdown-container:hover .dropdown-content {
+    .dropdown-content a {
+      color: #cc0066;
+      padding: 5px 10px;
+      text-decoration: none;
       display: block;
     }
 
     .dropdown-content ul {
-      margin: 0;
-      padding-left: 16px;
+      margin: 0 0 10px 20px;
+      padding-left: 0;
     }
 
-    .dropdown-content li {
-      padding: 8px 0;
-      color: #333;
-      list-style-type: circle;
-      font-weight: 300;
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
-    main {
-      padding: 40px 20px;
-      font-size: 1.2rem;
-      color: #333;
+    ul {
+      list-style: none;
+      padding: 0;
     }
+
+    li {
+      margin: 5px 0;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- 🌸 Cute loading screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <div class="loading-text">Loading your music magic...</div>
+  </div>
+
   <header>
     <h1>Welcome to Khloe's Music Store!</h1>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cherry_blossom_icon.png/240px-Cherry_blossom_icon.png" alt="Flower" class="flower-img">
   </header>
 
-  <nav>
-    <div class="dropdown-container">
-      <button class="dropdown-button">Domain 1</button>
-      <div class="dropdown-content">
-        <ul>
-          <li>13a-spotlight.html</li>
-          <li>13b-spotlight.html</li>
-          <li>13c-spotlight.html</li>
-          <li>13d-spotlight.html</li>
-        </ul>
-      </div>
-    </div>
-    <div class="dropdown-container">
-      <button class="dropdown-button">Domain 2</button>
-      <div class="dropdown-content">
-        <ul>
-          <li>22a-spotlight.html</li>
-          <li>22b-spotlight.html</li>
-          <li>22c-spotlight.html</li>
-          <li>22d-spotlight.html</li>
-        </ul>
-      </div>
-    </div>
-    <div class="dropdown-container">
-      <button class="dropdown-button">Domain 3</button>
-      <div class="dropdown-content">
-        <ul>
-          <li>23a-spotlight.html</li>
-          <li>23b-spotlight.html</li>
-          <li>23c-spotlight.html</li>
-          <li>hierarchy.html</li>
-        </ul>
-      </div>
-    </div>
-    <div class="dropdown-container">
-      <button class="dropdown-button">Domain 4</button>
-      <div class="dropdown-content">
-        <ul>
-          <li>headings1.html</li>
-          <li>display.html</li>
-          <li>spacing.html</li>
-          <li>wordwrap.html</li>
-        </ul>
-      </div>
-    </div>
-    <div class="dropdown-container">
-      <button class="dropdown-button">Domain 5</button>
-      <div class="dropdown-content">
-        <ul>
-          <li>51a-positioningexample.html</li>
-          <li>51b-spotlight.html</li>
-          <li>52a-books.html</li>
-          <li>52f-hours.html</li>
-        </ul>
-      </div>
-    </div>
-    <div class="dropdown-container">
-      <button class="dropdown-button">Domain 6</button>
-      <div class="dropdown-content">
-        <ul>
-          <li>contactus-complete.html</li>
-          <li>hours-complete.html</li>
-          <li>hours-mismatch.html</li>
-          <li>resizing.html</li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- 🌺 Flower image -->
+  <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png"
+       alt="Pink Flower Icon" class="flower-img" />
 
   <main>
-    <p>hover over a domain above to explore THE music store.</p>
+    <p>Whether you want a guitar, piano, drums, ukulele, trombone, or even a kazoo — you're in the right place!</p>
+    <p>We offer music courses to help you play your new instrument well.</p>
+    <p>Courses available for:</p>
+    <ul>
+      <li>Guitar</li>
+      <li>Piano</li>
+      <li>Drums</li>
+      <li>Ukulele</li>
+      <li>Trombone</li>
+      <li>Kazoo</li>
+    </ul>
+    <p>Hover over "Domain 1" above to explore THE Music Store. More coming soon!</p>
   </main>
+
+  <!-- 💫 Hide loading screen and show petals when page loads -->
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("loading-screen");
+      loader.classList.add("hidden");
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+
+      // 🌸 create floating petals
+      for (let i = 0; i < 15; i++) {
+        const petal = document.createElement("div");
+        petal.classList.add("petal");
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = 5 + Math.random() * 5 + "s";
+        petal.style.opacity = Math.random();
+        document.body.appendChild(petal);
+      }
+    });
+  </script>
 </body>
 </html>
