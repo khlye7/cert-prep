@@ -1,187 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <style>
+        /* Basic styling for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-header {
-background-color: #ffc1dc;
-      padding:
-      padding: 20px;
-      text-align: center;
-      color: #ff1a66;
-    }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .flower-img {
-      display: block;
-      margin: 20px auto;
-      max-width: 150px;
-    }
+        form {
+            width: 100%;
+        }
 
-    nav {
-      background-color: #ff99cc;
-      display: flex;
-      flex-wrap: wrap;
-    }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-    .dropdown {
-      position: relative;
-    }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    .dropbtn {
-      background-color: #ff99cc;
-      color: white;
-      padding: 14px 20px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
+        button:hover {
+            background-color: #45a049;
+        }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #ffe6f0;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
 
-    .dropdown-content a,
-    .dropdown-content p {
-      color: #ff1a66;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
 
-    .dropdown-content ul {
-      margin: 0 0 10px 20px;
-      padding-left: 0;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    @media (max-width: 600px) {
-      .dropbtn {
-        padding: 10px;
-        font-size: 14px;
-      }
-
-      .dropdown-content {
-        min-width: 100%;
-      }
-    }
-  </style>
+        /* Hide the image initially */
+        #image {
+            display: none;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form oninput="fn.value = firstname.value + ' ' + lastname.value">
+            <!-- Section 16: Select Tag -->
+            <fieldset>
+                <legend>How did you hear about us?</legend>
+                <select name="found" id="found">
+                    <option value="TV">TV</option>
+                    <option value="Web" selected>Web</option>
+                    <option value="Other">Other</option>
+                </select>
+            </fieldset>
 
-  <!-- 🌸 Cute loading screen -->
-  <div id="loading-screen">
-    <div class="loader"></div>
-    <div class="loading-text">Loading your music magic...</div>
-  </div>
+            <!-- Section 17: Textarea Tag -->
+            <fieldset>
+                <p>Add comments below:</p>
+                <textarea rows="6" cols="50" maxlength="255"></textarea>
+            </fieldset>
 
-  <header>
-    <h1>Welcome to Khloe's music store!</h1>
-  </header>
+            <!-- Section 18: Button Tags -->
+            <fieldset>
+                <button type="button" onclick="document.getElementById('image').style.display='block'">Show image</button>
+                <img id="image" src="your-image.jpg" alt="Your Image">
+                <input type="submit" name="submitform" value="Send it">
+            </fieldset>
 
-  <!-- 🌺 Flower image -->
-  <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png"
-       alt="Pink Flower Icon" class="flower-img" />
+            <!-- Section 19: Output Tag -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                <output name="fn"></output>
+            </fieldset>
 
-  <nav>
-    <!-- Domain 1 -->
-    <div class="dropdown">
-      <button class="dropbtn">Domain 1</button>
-      <div class="dropdown-content">
-        <p>Here at THE Music Store, we have the finest selection of instruments and accessories.</p>
-        <p>Whether you want a guitar, piano, drums, ukulele, trombone, or even a kazoo — you're in the right place!</p>
-        <p>We offer music courses to help you play your new instrument well.</p>
-        <p>Courses available for:</p>
-        <ul>
-          <li>Guitar</li>
-          <li>Piano</li>
-          <li>Drums</li>
-        </ul>
-        <p>Plus sheet music, accessories, and more!</p>
-      </div>
+            <!-- Section 20: Option Tag -->
+            <fieldset>
+                <legend>Questions</legend>
+                <p>How did you hear about us?</p>
+                <select name="found" id="found">
+                    <optgroup label="Media">
+                        <option value="TV">TV</option>
+                        <option value="Web" selected>Web</option>
+                        <option value="Other">Other</option>
+                    </optgroup>
+                    <optgroup label="Web">
+                        <option value="Google">Google</option>
+                        <option value="Bing">Bing</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+
+            <!-- Section 21: Datalist -->
+            <fieldset>
+                <p>What instrument are you most interested in learning?</p>
+                <input list="instruments" name="instrument" id="instrument">
+                <datalist id="instruments">
+                    <option value="Guitar">
+                    <option value="Piano">
+                    <option value="Drums">
+                    <option value="Bass">
+                </datalist>
+            </fieldset>
+
+            <!-- Section 22: Fieldset and Legend -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Questions</legend>
+                <p>How did you hear about us?</p>
+                <select name="found" id="found">
+                    <optgroup label="Media">
+                        <option value="TV">TV</option>
+                        <option value="Web" selected>Web</option>
+                        <option value="Other">Other</option>
+                    </optgroup>
+                    <optgroup label="Web">
+                        <option value="Google">Google</option>
+                        <option value="Bing">Bing</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+
+            <input type="submit" value="Submit">
+        </form>
     </div>
 
-    <!-- Domain 2 -->
-    <div class="dropdown">
-      <button class="dropbtn">Domain 2</button>
-      <div class="dropdown-content">
-        <p>Explore our files:</p>
-        <ul>
-          <li><a href="21a-index.html">21a-index.html</a> - Initial commit (last year)</li>
-          <li><a href="21b-books.html">21b-books.html</a> - Initial commit (last year)</li>
-          <li><a href="21b-index.html">21b-index.html</a> - Initial commit (last year)</li>
-          <li><a href="21b-main.css">21b-main.css</a> - Initial commit (last year)</li>
-          <li><a href="22a-index.html">22a-index.html</a> - Initial commit (last year)</li>
-          <li><a href="22a-main.css">22a-main.css</a> - Initial commit (last year)</li>
-          <li><a href="22b-books.html">22b-books.html</a> - Initial commit (last year)</li>
-          <li><a href="22b-main.css">22b-main.css</a> - Initial commit (last year)</li>
-          <li><a href="22b2-main.css">22b2-main.css</a> - Initial commit (last year)</li>
-          <li><a href="22b2-spotlight.html">22b2-spotlight.html</a> - Initial commit (last year)</li>
-          <li><a href="22b3-books.html">22b3-books.html</a> - Initial commit (last year)</li>
-          <li><a href="22b3-main.css">22b3-main.css</a> - Initial commit (last year)</li>
-          <li><a href="23a-main.css">23a-main.css</a> - Initial commit (last year)</li>
-          <li><a href="23a-spotlight.html">23a-spotlight.html</a> - Initial commit (last year)</li>
-          <li><a href="23b-main.css">23b-main.css</a> - Initial commit (last year)</li>
-          <li><a href="23b-spotlight.html">23b-spotlight.html</a> - Initial commit (last year)</li>
-          <li><a href="23c-main.css">23c-main.css</a> - Initial commit (last year)</li>
-          <li><a href="23c-spotlight.html">23c-spotlight.html</a> - Initial commit (last year)</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Domain 3 -->
-    <div class="dropdown">
-      <button class="dropbtn">Domain 3</button>
-      <div class="dropdown-content">
-        <p>(Coming soon)</p>
-      </div>
-    </div>
-
-    <!-- Domain 4 -->
-    <div class="dropdown">
-      <button class="dropbtn">Domain 4</button>
-      <div class="dropdown-content">
-        <p>(Coming soon)</p>
-      </div>
-    </div>
-
-    <!-- Domain 5 -->
-    <div class="dropdown">
-      <button class="dropbtn">Domain 5</button>
-      <div class="dropdown-content">
-        <p>(Coming soon)</p>
-      </div>
-    </div>
-
-    <!-- Domain 6 -->
-    <div class="dropdown">
-      <button class="dropbtn">Domain 6</button>
-      <div class="dropdown-content">
-        <p>(Coming soon)</p>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <p>Hover over "Domain 2" above to explore the files. More coming soon!</p>
-  </main>
-
-  <!-- 💫 Hide loading screen when page loads -->
-  <script>
-    window.addEventListener("load", function () {
-      const loader = document.getElementById("loading-screen");
-      loader.classList.add("hidden");
-    });
-  </script>
+    <script>
+        // Display a message when the form is submitted
+        function submitForm() {
+            alert("Thank you for your submission!");
+        }
+    </script>
 </body>
 </html>
