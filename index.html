@@ -1,130 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE Music Store</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khloe's Music Store</title>
+
+  <!-- 🎀 Fancy Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
   <style>
+    /* 🎀 Loading screen styles */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffe6f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+      transition: opacity 0.5s ease;
+    }
+
+    #loading-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader {
+      border: 10px solid #ffcce6;
+      border-top: 10px solid #ff66b2;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      font-family: 'Playfair Display', serif;
+      color: #ff1a66;
+      font-size: 20px;
+    }
+
     body {
-      font-family: sans-serif;
-      background: #f8f8f8;
+      font-family: 'Playfair Display', serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffcce6;
+      text-align: center;
       padding: 20px;
     }
-    .menu {
-      width: 300px;
-      margin: auto;
+
+    header h1 {
+      margin: 10px 0;
+      font-size: 2.5em;
+      color: #cc0066;
     }
-    .domain {
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-bottom: 10px;
+
+    .flower-img {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      height: auto;
+    }
+
+    nav {
+      background-color: #ffb3d9;
       padding: 10px;
-      transition: 0.3s;
-      position: relative;
+      text-align: center;
     }
-    .domain h3 {
-      margin: 0;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .flower {
-      display: inline-block;
-      transition: transform 0.5s ease;
-    }
-    .domain.open .flower {
-      transform: rotate(360deg);
-    }
+
     .dropdown {
-      display: none;
-      margin-top: 10px;
+      display: inline-block;
+      position: relative;
+      margin: 0 10px;
     }
-    .domain.open .dropdown {
-      display: block;
-    }
-    .file {
-      padding: 5px 0;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .file:hover {
-      color: purple;
-    }
-    .file-content {
-      display: none;
-      padding: 10px;
-      background: #f0f0f0;
+
+    .dropbtn {
+      background-color: #ff80bf;
+      color: white;
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
       border-radius: 5px;
-      margin-top: 5px;
-      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
     }
-    .file.active + .file-content {
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff0f5;
+      min-width: 250px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
       display: block;
+    }
+
+    .dropdown-content p {
+      margin: 8px 0;
+    }
+
+    .dropdown-content ul {
+      margin: 0 0 10px 20px;
+      padding-left: 0;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
     }
   </style>
 </head>
+
 <body>
-  <div class="menu">
-    <div class="domain">
-      <h3 onclick="toggleDomain(this)">Domain 1 <span class="flower">🌸</span></h3>
-      <div class="dropdown">
-        <div class="file" onclick="toggleFile(this)">11a-scripts.html</div>
-        <div class="file-content">
-          <p>Here at THE Music Store, we have the finest selection of instruments and accessories.</p>
-          <p>Whether you want a guitar, piano, drums, ukulele, trombone, or even a kazoo — you're in the right place!</p>
-          <p>We also offer music courses to help you play your instrument well.</p>
-          <p>We currently offer courses for:</p>
-          <ul>
-            <li>Guitar</li>
-            <li>Piano</li>
-            <li>Drums</li>
-          </ul>
-          <p>Plus books, sheet music, and accessories galore!</p>
-        </div>
-        <div class="file">11c-scripts.html</div>
-        <div class="file">test.css</div>
-      </div>
-    </div>
 
-    <div class="domain">
-      <h3 onclick="toggleDomain(this)">Domain 2 <span class="flower">🌸</span></h3>
-      <div class="dropdown">
-        <div class="file">.vs</div>
-        <div class="file">21a-index.html</div>
-        <div class="file">21b-books.html</div>
-        <div class="file">21b-index.html</div>
-        <div class="file">21b-main.css</div>
-        <div class="file">22a-index.html</div>
-        <div class="file">22a-main.css</div>
-        <div class="file">22b-books.html</div>
-        <div class="file">22b-main.css</div>
-        <div class="file">22b2-main.css</div>
-        <div class="file">22b2-spotlight.html</div>
-        <div class="file">22b3-books.html</div>
-        <div class="file">22b3-main.css</div>
-        <div class="file">23a-main.css</div>
-        <div class="file">23a-spotlight.html</div>
-        <div class="file">23b-main.css</div>
-        <div class="file">23b-spotlight.html</div>
-        <div class="file">23c-main.css</div>
-        <div class="file">23c-spotlight.html</div>
-      </div>
-    </div>
-
-    <!-- domains 3, 4, 5, 6 can be added in the same structure -->
+  <!-- 🌸 Cute loading screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <div class="loading-text">Loading your music magic...</div>
   </div>
 
-  <script>
-    function toggleDomain(header) {
-      const domain = header.parentElement;
-      domain.classList.toggle('open');
-    }
+  <!-- 🌺 Header section -->
+  <header>
+    <h1>Welcome to Khloe's Music Store!</h1>
+  </header>
 
-    function toggleFile(file) {
-      file.classList.toggle('active');
-    }
+  <!-- 🌸 Flower image -->
+  <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png"
+       alt="Pink Flower Icon" class="flower-img" />
+
+  <!-- 💖 Navigation with dropdowns -->
+  <nav>
+    <div class="dropdown">
+      <button class="dropbtn">Domain 1</button>
+      <div class="dropdown-content">
+        <p>Here at THE Music Store, we have the finest selection of instruments and accessories.</p>
+        <p>Whether you want a guitar, piano, drums, ukulele, trombone, or even a kazoo — you're in the right place!</p>
+        <p>We offer music courses to help you play your new instrument well.</p>
+        <p>Courses available for:</p>
+        <ul>
+          <li>Guitar</li>
+          <li>Piano</li>
+          <li>Drums</li>
+        </ul>
+        <p>Plus sheet music, accessories, and more!</p>
+      </div>
+    </div>
+
+    <!-- Add more domains as needed -->
+    <div class="dropdown"><button class="dropbtn">Domain 2</button><div class="dropdown-content"><p>Domain 2 Content</p></div></div>
+    <div class="dropdown"><button class="dropbtn">Domain 3</button><div class="dropdown-content"><p>Domain 3 Content</p></div></div>
+    <div class="dropdown"><button class="dropbtn">Domain 4</button><div class="dropdown-content"><p>Domain 4 Content</p></div></div>
+    <div class="dropdown"><button class="dropbtn">Domain 5</button><div class="dropdown-content"><p>Domain 5 Content</p></div></div>
+    <div class="dropdown"><button class="dropbtn">Domain 6</button><div class="dropdown-content"><p>Domain 6 Content</p></div></div>
+  </nav>
+
+  <!-- 🌷 Main content section -->
+  <main>
+    <p>Hover over "Domain 1" above to explore THE Music Store. More coming soon!</p>
+  </main>
+
+  <!-- 💫 Hide loading screen when page loads -->
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("loading-screen");
+      loader.classList.add("hidden");
+    });
   </script>
+
 </body>
+
 </html>
