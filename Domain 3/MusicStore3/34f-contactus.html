@@ -1,28 +1,167 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <style>
+        /* Basic styling for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            width: 100%;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* Hide the image initially */
+        #image {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h2>Contact Us</h2>
-    <p>
-        Interested in more information? Fill out the form below and submit it to us.
-        We look forward to hearing from you!
-    </p>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form oninput="fn.value = firstname.value + ' ' + lastname.value">
+            <!-- Section 16: Select Tag -->
+            <fieldset>
+                <legend>How did you hear about us?</legend>
+                <select name="found" id="found">
+                    <option value="TV">TV</option>
+                    <option value="Web" selected>Web</option>
+                    <option value="Other">Other</option>
+                </select>
+            </fieldset>
 
-    <!-- insert form here-->
-    <form action="thankyou.html" method="post">
-        <label for="firstname">First Name</label>
-        <input type="text" name="firstname" id="firstname" />
-        <br />        
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" id="lastname" />
-        <br />       
-        <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" />
-        <br />       
-    </form>
+            <!-- Section 17: Textarea Tag -->
+            <fieldset>
+                <p>Add comments below:</p>
+                <textarea rows="6" cols="50" maxlength="255"></textarea>
+            </fieldset>
 
+            <!-- Section 18: Button Tags -->
+            <fieldset>
+                <button type="button" onclick="document.getElementById('image').style.display='block'">Show image</button>
+                <img id="image" src="your-image.jpg" alt="Your Image">
+                <input type="submit" name="submitform" value="Send it">
+            </fieldset>
+
+            <!-- Section 19: Output Tag -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                <output name="fn"></output>
+            </fieldset>
+
+            <!-- Section 20: Option Tag -->
+            <fieldset>
+                <legend>Questions</legend>
+                <p>How did you hear about us?</p>
+                <select name="found" id="found">
+                    <optgroup label="Media">
+                        <option value="TV">TV</option>
+                        <option value="Web" selected>Web</option>
+                        <option value="Other">Other</option>
+                    </optgroup>
+                    <optgroup label="Web">
+                        <option value="Google">Google</option>
+                        <option value="Bing">Bing</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+
+            <!-- Section 21: Datalist -->
+            <fieldset>
+                <p>What instrument are you most interested in learning?</p>
+                <input list="instruments" name="instrument" id="instrument">
+                <datalist id="instruments">
+                    <option value="Guitar">
+                    <option value="Piano">
+                    <option value="Drums">
+                    <option value="Bass">
+                </datalist>
+            </fieldset>
+
+            <!-- Section 22: Fieldset and Legend -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Questions</legend>
+                <p>How did you hear about us?</p>
+                <select name="found" id="found">
+                    <optgroup label="Media">
+                        <option value="TV">TV</option>
+                        <option value="Web" selected>Web</option>
+                        <option value="Other">Other</option>
+                    </optgroup>
+                    <optgroup label="Web">
+                        <option value="Google">Google</option>
+                        <option value="Bing">Bing</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        // Display a message when the form is submitted
+        function submitForm() {
+            alert("Thank you for your submission!");
+        }
+    </script>
 </body>
 </html>
