@@ -1,24 +1,100 @@
+
+header {
+background-color: #ffc1dc;
+      padding:
+      padding: 20px;
+      text-align: center;
+      color: #ff1a66;
+    }
+
+    .flower-img {
+      display: block;
+      margin: 20px auto;
+      max-width: 150px;
+    }
+
+    nav {
+      background-color: #ff99cc;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      background-color: #ff99cc;
+      color: white;
+      padding: 14px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffe6f0;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a,
+    .dropdown-content p {
+      color: #ff1a66;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content ul {
+      margin: 0 0 10px 20px;
+      padding-left: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    @media (max-width: 600px) {
+      .dropbtn {
+        padding: 10px;
         font-size: 14px;
+      }
+
+      .dropdown-content {
+        min-width: 100%;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Loading screen -->
+  <!-- 🌸 Cute loading screen -->
   <div id="loading-screen">
     <div class="loader"></div>
-    <div class="loading-text">Loading...</div>
+    <div class="loading-text">Loading your music magic...</div>
   </div>
 
-  <!-- Header Section -->
   <header>
-    <img src="images/music-flower.jpg" alt="Music Store Flower" class="flower-img">
-    <h1>Welcome to Khloe's Music Store ೋღ 🌺</h1>
+    <h1>Welcome to Khloe's music store!</h1>
   </header>
 
-  <!-- Navigation Section -->
+  <!-- 🌺 Flower image -->
+  <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png"
+       alt="Pink Flower Icon" class="flower-img" />
+
   <nav>
+    <!-- Domain 1 -->
     <div class="dropdown">
       <button class="dropbtn">Domain 1</button>
       <div class="dropdown-content">
@@ -34,94 +110,78 @@
         <p>Plus sheet music, accessories, and more!</p>
       </div>
     </div>
+
+    <!-- Domain 2 -->
     <div class="dropdown">
       <button class="dropbtn">Domain 2</button>
       <div class="dropdown-content">
-        <!-- Add Domain 2 content here -->
-        <p>Domain 2 Content</p>
+        <p>Explore our files:</p>
+        <ul>
+          <li><a href="21a-index.html">21a-index.html</a> - Initial commit (last year)</li>
+          <li><a href="21b-books.html">21b-books.html</a> - Initial commit (last year)</li>
+          <li><a href="21b-index.html">21b-index.html</a> - Initial commit (last year)</li>
+          <li><a href="21b-main.css">21b-main.css</a> - Initial commit (last year)</li>
+          <li><a href="22a-index.html">22a-index.html</a> - Initial commit (last year)</li>
+          <li><a href="22a-main.css">22a-main.css</a> - Initial commit (last year)</li>
+          <li><a href="22b-books.html">22b-books.html</a> - Initial commit (last year)</li>
+          <li><a href="22b-main.css">22b-main.css</a> - Initial commit (last year)</li>
+          <li><a href="22b2-main.css">22b2-main.css</a> - Initial commit (last year)</li>
+          <li><a href="22b2-spotlight.html">22b2-spotlight.html</a> - Initial commit (last year)</li>
+          <li><a href="22b3-books.html">22b3-books.html</a> - Initial commit (last year)</li>
+          <li><a href="22b3-main.css">22b3-main.css</a> - Initial commit (last year)</li>
+          <li><a href="23a-main.css">23a-main.css</a> - Initial commit (last year)</li>
+          <li><a href="23a-spotlight.html">23a-spotlight.html</a> - Initial commit (last year)</li>
+          <li><a href="23b-main.css">23b-main.css</a> - Initial commit (last year)</li>
+          <li><a href="23b-spotlight.html">23b-spotlight.html</a> - Initial commit (last year)</li>
+          <li><a href="23c-main.css">23c-main.css</a> - Initial commit (last year)</li>
+          <li><a href="23c-spotlight.html">23c-spotlight.html</a> - Initial commit (last year)</li>
+        </ul>
       </div>
     </div>
+
+    <!-- Domain 3 -->
     <div class="dropdown">
       <button class="dropbtn">Domain 3</button>
       <div class="dropdown-content">
-        <!-- Add Domain 3 content here -->
-        <p>Domain 3 Content</p>
+        <p>(Coming soon)</p>
       </div>
     </div>
+
+    <!-- Domain 4 -->
     <div class="dropdown">
       <button class="dropbtn">Domain 4</button>
       <div class="dropdown-content">
-        <!-- Add Domain 4 content here -->
-        <p>Domain 4 Content</p>
+        <p>(Coming soon)</p>
       </div>
     </div>
+
+    <!-- Domain 5 -->
     <div class="dropdown">
       <button class="dropbtn">Domain 5</button>
       <div class="dropdown-content">
-        <!-- Add Domain 5 content here -->
-        <p>Domain 5 Content</p>
+        <p>(Coming soon)</p>
       </div>
     </div>
+
+    <!-- Domain 6 -->
     <div class="dropdown">
       <button class="dropbtn">Domain 6</button>
       <div class="dropdown-content">
-        <!-- Add Domain 6 content here -->
-        <p>Domain 6 Content</p>
+        <p>(Coming soon)</p>
       </div>
     </div>
   </nav>
 
-  <!-- Main Content Section -->
   <main>
-    <h2>Contact Us</h2>
-
-    <!-- Contact Form -->
-    <form action="#">
-      <fieldset>
-        <legend>Personal Information</legend>
-        <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
-        <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
-        <input type="email" name="email" id="email" placeholder="Email" required>
-      </fieldset>
-
-      <fieldset>
-        <legend>Questions</legend>
-        <p>How did you hear about us?</p>
-        <select name="found" id="found">
-          <optgroup label="Media">
-            <option value="TV">TV</option>
-            <option value="Web" selected>Web</option>
-            <option value="Other">Other</option>
-          </optgroup>
-          <optgroup label="Web">
-            <option value="Google">Google</option>
-            <option value="Bing">Bing</option>
-          </optgroup>
-        </select>
-      </fieldset>
-
-      <fieldset>
-        <p>What instrument are you most interested in learning?</p>
-        <input list="instruments" name="instrument" id="instrument">
-        <datalist id="instruments">
-          <option value="Guitar">
-          <option value="Piano">
-          <option value="Drums">
-          <option value="Bass">
-        </datalist>
-      </fieldset>
-
-      <input type="submit" value="Submit">
-    </form>
+    <p>Hover over "Domain 2" above to explore the files. More coming soon!</p>
   </main>
 
+  <!-- 💫 Hide loading screen when page loads -->
   <script>
-    // Hide the loading screen after the page is fully loaded
     window.addEventListener("load", function () {
       const loader = document.getElementById("loading-screen");
       loader.classList.add("hidden");
     });
   </script>
-
 </body>
 </html>
