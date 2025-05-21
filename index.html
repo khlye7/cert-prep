@@ -44,7 +44,7 @@
       font-size: 20px;
     }
 
-    /* Petal styles */
+    /* Floating petals */
     .petal {
       position: fixed;
       top: -40px;
@@ -57,7 +57,6 @@
       animation-timing-function: linear;
       animation-iteration-count: infinite;
     }
-
     @keyframes fall {
       0% {
         transform: translateY(0) rotate(0deg);
@@ -109,6 +108,7 @@
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
       padding: 10px;
       z-index: 2;
+      min-width: 200px;
     }
 
     .dropdown-content a {
@@ -136,24 +136,31 @@
       margin: 5px 0;
     }
 
+    h2 {
+      color: #cc0066;
+      margin-top: 40px;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- 🌸 Cute loading screen -->
+  <!-- 🌸 Loading Screen -->
   <div id="loading-screen">
     <div class="loader"></div>
     <div class="loading-text">Loading your music magic...</div>
   </div>
 
+  <!-- 🌺 Header -->
   <header>
     <h1>Welcome to Khloe's Music Store!</h1>
   </header>
 
-  <!-- 🌺 Flower image -->
+  <!-- 🌼 Flower Image -->
   <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png"
        alt="Pink Flower Icon" class="flower-img" />
 
+  <!-- 🌟 Main Content -->
   <main>
     <p>Whether you want a guitar, piano, drums, ukulele, trombone, or even a kazoo — you're in the right place!</p>
     <p>We offer music courses to help you play your new instrument well.</p>
@@ -166,10 +173,76 @@
       <li>Trombone</li>
       <li>Kazoo</li>
     </ul>
-    <p>Hover over "Domain 1" above to explore THE Music Store. More coming soon!</p>
+
+    <!-- 🌐 Dropdown Menu -->
+    <h2>Explore Our Domains</h2>
+    <div class="dropdown">
+      <button>Domain 1</button>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="#">File 1A</a></li>
+          <li><a href="#">File 1B</a></li>
+          <li><a href="#">File 1C</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button>Domain 2</button>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="#">File 2A</a></li>
+          <li><a href="#">File 2B</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button>Domain 3</button>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="#">File 3A</a></li>
+          <li><a href="#">File 3B</a></li>
+          <li><a href="#">File 3C</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button>Domain 4</button>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="#">File 4A</a></li>
+          <li><a href="#">File 4B</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button>Domain 5</button>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="#">File 5A</a></li>
+          <li><a href="#">File 5B</a></li>
+          <li><a href="#">File 5C</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button>Domain 6</button>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="#">File 6A</a></li>
+          <li><a href="#">File 6B</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Hover over each domain to discover all the goodies inside!</p>
   </main>
 
-  <!-- 💫 Hide loading screen and show petals when page loads -->
+  <!-- ✨ Script for Loading & Petals -->
   <script>
     window.addEventListener("load", function () {
       const loader = document.getElementById("loading-screen");
@@ -178,7 +251,7 @@
         loader.style.display = "none";
       }, 500);
 
-      // 🌸 create floating petals
+      // 🌸 floating petals
       for (let i = 0; i < 15; i++) {
         const petal = document.createElement("div");
         petal.classList.add("petal");
@@ -189,5 +262,6 @@
       }
     });
   </script>
+
 </body>
 </html>
