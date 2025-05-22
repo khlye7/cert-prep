@@ -1,21 +1,28 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>THE Music Store</title>
+  <meta charset="UTF-8" />
+  <title>Media - Iframe Example</title>
+  <style>
+    body {
+      font-family: 'playfair display', serif;
+      background-color: #ffe6f0;
+      color: #b30059;
+      margin: 20px;
+    }
+    iframe {
+      border: 3px solid #b30059;
+      border-radius: 12px;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <p>See this cool close-up of a piano player</p>
-    <video height="480" controls="controls">
-        <source src="Videos/Happy.mp4" type="video/mp4" />
-        <source src="Videos/Happy.mov" type="video/quicktime" />
-        <track src="Videos/subtitles.vtt" kind="subtitles" srclang="en" label="English" />
-    </video>
-        <p>Don't know what a metronome sounds like? Click the play button below to hear it.</p>
-    <audio controls="controls">
-        <source src="Audio/metronome_audio.mp3" type="audio/mp3" />
-    </audio>
-    <p>Here is an example of an iframe</p>
-    
+
+  <p>Here is an example of an iframe.</p>
+
+  <iframe width="300" height="300" id="vtt" src="vtt.html"></iframe>
+
 </body>
 </html>
