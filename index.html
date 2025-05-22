@@ -176,11 +176,40 @@
       list-style: none;
       padding: 0;
       margin: 0 auto;
-      max-width: 200px;
+      max-width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
     li {
-      margin: 5px 0;
+      background: #ffcce6;
+      border-radius: 12px;
+      padding: 10px;
+      width: 120px;
+      box-shadow: 0 0 8px #ff99cc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 600;
+      color: #660033;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+    li:hover {
+      background-color: #ff80bf;
+      box-shadow: 0 0 12px #ff66b2;
+      cursor: pointer;
+    }
+
+    li img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 2px #cc0066);
     }
 
     h2 {
@@ -261,74 +290,51 @@
     <p>We offer music courses to help you play your new instrument well.</p>
     <p>Courses available for:</p>
     <ul>
-      <li>Guitar</li>
-      <li>Piano</li>
-      <li>Drums</li>
-      <li>Ukulele</li>
-      <li>Trombone</li>
-      <li>Kazoo</li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/GuitareClassique5.png" alt="Guitar" />
+        guitar
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Grand_piano_1886_by_Chickering_and_Sons_Boston_-_side_view.png" alt="Piano" />
+        piano
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Drum_icon.svg" alt="Drums" />
+        drums
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Ukulele_1.png" alt="Ukulele" />
+        ukulele
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Trombone_Icon.svg" alt="Trombone" />
+        trombone
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Kazoo_icon.svg" alt="Kazoo" />
+        kazoo
+      </li>
     </ul>
-
-    <p style="margin-top: 40px;">Hover over a domain up top to explore THE Music Store. More coming soon!</p>
   </main>
 
-  <!-- ✨ Script for Loading & Petals -->
   <script>
-    window.addEventListener("load", function () {
-      const loader = document.getElementById("loading-screen");
-      loader.classList.add("hidden");
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 500);
-
-      // 🌸 fewer floating petals for better speed
-      for (let i = 0; i < 7; i++) {
-        const petal = document.createElement("div");
-        petal.classList.add("petal");
-        petal.style.left = Math.random() * 100 + "vw";
-        petal.style.animationDuration = 3 + Math.random() * 2 + "s";  // 3-5 seconds fall
-        petal.style.opacity = Math.random();
-        document.body.appendChild(petal);
-      }
+    // remove loading screen after page load
+    window.addEventListener('load', () => {
+      const loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.classList.add('hidden');
+      setTimeout(() => loadingScreen.style.display = 'none', 500);
     });
 
-    // max wait 8 seconds to hide loader no matter what
-    setTimeout(() => {
-      const loader = document.getElementById("loading-screen");
-      if (!loader.classList.contains("hidden")) {
-        loader.classList.add("hidden");
-        setTimeout(() => {
-          loader.style.display = "none";
-        }, 500);
-      }
-    }, 8000);
+    // create floating petals animation
+    const petalCount = 15;
+    for (let i = 0; i < petalCount; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (5 + Math.random() * 10) + 's';
+      petal.style.animationDelay = (Math.random() * 10) + 's';
+      document.body.appendChild(petal);
+    }
   </script>
-<section id="survey" style="background:#ffe6f0; padding:20px; max-width:400px; margin:40px auto; border-radius:12px; box-shadow:0 0 15px #ff99cc;">
-  <h2 style="font-family: 'Playfair Display', serif; color:#cc0066; text-align:center;">music store survey</h2>
-  <form>
-    <label for="favorite-instrument" style="color:#99004d; font-weight:bold;">favorite instrument?</label><br />
-    <select id="favorite-instrument" name="favorite-instrument" style="width:100%; padding:8px; margin:8px 0; border-radius:6px; border:1px solid #ffb3d9; font-family: 'Playfair Display', serif;">
-      <option value="">choose one</option>
-      <option value="guitar">guitar</option>
-      <option value="piano">piano</option>
-      <option value="drums">drums</option>
-      <option value="ukulele">ukulele</option>
-      <option value="trombone">trombone</option>
-      <option value="kazoo">kazoo</option>
-    </select>
-
-    <label for="learning-interest" style="color:#99004d; font-weight:bold;">would you take music lessons?</label><br />
-    <input type="radio" id="yes" name="learning-interest" value="yes" />
-    <label for="yes" style="color:#660033;">yes</label><br />
-    <input type="radio" id="no" name="learning-interest" value="no" />
-    <label for="no" style="color:#660033;">no</label><br />
-
-    <label for="comments" style="color:#99004d; font-weight:bold; margin-top:12px; display:block;">anything else to say?</label><br />
-    <textarea id="comments" name="comments" rows="3" style="width:100%; padding:8px; border-radius:6px; border:1px solid #ffb3d9; font-family: 'Playfair Display', serif;"></textarea><br />
-
-    <button type="submit" style="background:#ff66b2; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-family: 'Playfair Display', serif; margin-top:12px; width:100%;">send it!</button>
-  </form>
-</section>
-
 </body>
 </html>
