@@ -1,18 +1,39 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>THE Music Store</title>
+  <meta charset="UTF-8" />
+  <title>Media - Audio and Subtitles</title>
+  <style>
+    body {
+      font-family: 'playfair display', serif;
+      background-color: #ffe6f0;
+      color: #b30059;
+      margin: 20px;
+    }
+    audio, video {
+      display: block;
+      margin-top: 10px;
+      max-width: 100%;
+      border-radius: 12px;
+      border: 3px solid #b30059;
+    }
+  </style>
 </head>
 <body>
-    <p>See this cool close-up of a piano player</p>
-    <video height="480" controls="controls">
-        <source src="Videos/Happy.mp4" type="video/mp4" />
-        <source src="Videos/Happy.mov" type="video/quicktime" />
-    </video>
-        <p>Don't know what a metronome sounds like? Click the play button below to hear it.</p>
-    
-    <p>Here is an example of an iframe</p>
-    
+
+  <p>Don’t know what a metronome sounds like?</p>
+
+  <audio controls>
+    <source src="Audio/metronome_audio.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <video controls>
+    <source src="Videos/Happy.mp4" type="video/mp4" />
+    <source src="Videos/Happy.mov" type="video/quicktime" />
+    <track src="Videos/subtitles.vtt" kind="subtitles" srclang="en" label="English" />
+    Your browser does not support the video tag.
+  </video>
+
 </body>
 </html>
