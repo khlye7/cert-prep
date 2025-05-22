@@ -303,6 +303,32 @@
       }
     }, 8000);
   </script>
+<section id="survey" style="background:#ffe6f0; padding:20px; max-width:400px; margin:40px auto; border-radius:12px; box-shadow:0 0 15px #ff99cc;">
+  <h2 style="font-family: 'Playfair Display', serif; color:#cc0066; text-align:center;">music store survey</h2>
+  <form>
+    <label for="favorite-instrument" style="color:#99004d; font-weight:bold;">favorite instrument?</label><br />
+    <select id="favorite-instrument" name="favorite-instrument" style="width:100%; padding:8px; margin:8px 0; border-radius:6px; border:1px solid #ffb3d9; font-family: 'Playfair Display', serif;">
+      <option value="">choose one</option>
+      <option value="guitar">guitar</option>
+      <option value="piano">piano</option>
+      <option value="drums">drums</option>
+      <option value="ukulele">ukulele</option>
+      <option value="trombone">trombone</option>
+      <option value="kazoo">kazoo</option>
+    </select>
+
+    <label for="learning-interest" style="color:#99004d; font-weight:bold;">would you take music lessons?</label><br />
+    <input type="radio" id="yes" name="learning-interest" value="yes" />
+    <label for="yes" style="color:#660033;">yes</label><br />
+    <input type="radio" id="no" name="learning-interest" value="no" />
+    <label for="no" style="color:#660033;">no</label><br />
+
+    <label for="comments" style="color:#99004d; font-weight:bold; margin-top:12px; display:block;">anything else to say?</label><br />
+    <textarea id="comments" name="comments" rows="3" style="width:100%; padding:8px; border-radius:6px; border:1px solid #ffb3d9; font-family: 'Playfair Display', serif;"></textarea><br />
+
+    <button type="submit" style="background:#ff66b2; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-family: 'Playfair Display', serif; margin-top:12px; width:100%;">send it!</button>
+  </form>
+</section>
 
 </body>
 </html>
