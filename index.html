@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Khloe <3 </title>
+  <title>Khloe's Music Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
   <style>
-    /* loading screen */
+    /* Loading screen styles */
     #loading-screen {
       position: fixed;
       top: 0; left: 0;
@@ -42,6 +42,7 @@
       font-size: 20px;
     }
 
+    /* Floating petals */
     .petal {
       position: fixed;
       top: -40px;
@@ -89,6 +90,7 @@
 
     .dropdown {
       position: relative;
+      font-family: 'Playfair Display', serif;
     }
 
     .dropdown > button {
@@ -103,6 +105,7 @@
       transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     }
 
+    /* sparkly glowing hover on domain buttons */
     .dropdown > button:hover {
       background-color: #ff80bf;
       box-shadow: 0 0 10px #ff66b2, 0 0 20px #ff99cc;
@@ -132,6 +135,7 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    /* sliding sparkle effect on dropdown links */
     .dropdown-content a::after {
       content: '';
       position: absolute;
@@ -183,74 +187,79 @@
       color: #cc0066;
       margin-top: 40px;
     }
-
-    section, article, aside {
-      margin-top: 40px;
-      padding: 20px;
-      border: 2px solid #ffb3d9;
-      border-radius: 12px;
-      background-color: #fff0f8;
-    }
-
-    form {
-      margin-top: 20px;
-    }
-
-    input, select, textarea, datalist {
-      padding: 8px;
-      border: 1px solid #ff99cc;
-      border-radius: 6px;
-      margin-bottom: 12px;
-      width: 80%;
-    }
-
-    fieldset {
-      border: 2px dashed #ff80bf;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-
-    button {
-      background-color: #ff66b2;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    button:hover {
-      background-color: #e60073;
-    }
   </style>
 </head>
 <body>
 
+  <!-- 🌸 Loading Screen -->
   <div id="loading-screen">
     <div class="loader"></div>
     <div class="loading-text">Loading your music magic...</div>
   </div>
 
+  <!-- 🌺 Header -->
   <header>
     <h1>Welcome to Khloe's Music Store!</h1>
   </header>
 
+  <!-- 💖 Nav Menu -->
   <nav>
-    <div class="dropdown"><button>Domain 1</button><div class="dropdown-content"><a href="#">File 1A</a><a href="#">File 1B</a><a href="#">File 1C</a></div></div>
-    <div class="dropdown"><button>Domain 2</button><div class="dropdown-content"><a href="#">File 2A</a><a href="#">File 2B</a></div></div>
-    <div class="dropdown"><button>Domain 3</button><div class="dropdown-content"><a href="#">File 3A</a><a href="#">File 3B</a><a href="#">File 3C</a></div></div>
-    <div class="dropdown"><button>Domain 4</button><div class="dropdown-content"><a href="#">File 4A</a><a href="#">File 4B</a></div></div>
-    <div class="dropdown"><button>Domain 5</button><div class="dropdown-content"><a href="#">File 5A</a><a href="#">File 5B</a><a href="#">File 5C</a></div></div>
-    <div class="dropdown"><button>Domain 6</button><div class="dropdown-content"><a href="#">File 6A</a><a href="#">File 6B</a></div></div>
+    <div class="dropdown">
+      <button>Domain 1</button>
+      <div class="dropdown-content">
+        <a href="#">File 1A</a>
+        <a href="#">File 1B</a>
+        <a href="#">File 1C</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button>Domain 2</button>
+      <div class="dropdown-content">
+        <a href="#">File 2A</a>
+        <a href="#">File 2B</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button>Domain 3</button>
+      <div class="dropdown-content">
+        <a href="#">File 3A</a>
+        <a href="#">File 3B</a>
+        <a href="#">File 3C</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button>Domain 4</button>
+      <div class="dropdown-content">
+        <a href="#">File 4A</a>
+        <a href="#">File 4B</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button>Domain 5</button>
+      <div class="dropdown-content">
+        <a href="#">File 5A</a>
+        <a href="#">File 5B</a>
+        <a href="#">File 5C</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button>Domain 6</button>
+      <div class="dropdown-content">
+        <a href="#">File 6A</a>
+        <a href="#">File 6B</a>
+      </div>
+    </div>
   </nav>
 
-  <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png" alt="Pink Flower Icon" class="flower-img" />
+  <!-- 🌼 Flower Image -->
+  <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png"
+       alt="Pink Flower Icon" class="flower-img" />
 
+  <!-- 🌟 Main Content -->
   <main>
     <p>Whether you want a guitar, piano, drums, ukulele, trombone, or even a kazoo — you're in the right place!</p>
     <p>We offer music courses to help you play your new instrument well.</p>
+    <p>Courses available for:</p>
     <ul>
       <li>Guitar</li>
       <li>Piano</li>
@@ -259,58 +268,41 @@
       <li>Trombone</li>
       <li>Kazoo</li>
     </ul>
+
     <p style="margin-top: 40px;">Hover over a domain up top to explore THE Music Store. More coming soon!</p>
+  </main>
 
-    <!-- added content from checklist -->
-    <section>
-      <h2>About Our Courses</h2>
-      <article>
-        <p>We teach both beginners and advanced musicians how to master their favorite instruments.</p>
-      </article>
-      <aside>
-        <p><strong>Note:</strong> Seats fill up fast, so register early!</p>
-      </aside>
-    </section>
-<section>
-  <h2>Course Registration Form</h2>
-  <form>
-    <label for="name">Name:</label><br />
-    <input type="text" id="name" name="name" required><br />
+  <!-- ✨ Script for Loading & Petals -->
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("loading-screen");
+      loader.classList.add("hidden");
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
 
-    <label for="email">Email:</label><br />
-    <input type="email" id="email" name="email" required><br />
+      // 🌸 fewer floating petals for better speed
+      for (let i = 0; i < 7; i++) {
+        const petal = document.createElement("div");
+        petal.classList.add("petal");
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = 3 + Math.random() * 2 + "s";  // 3-5 seconds fall
+        petal.style.opacity = Math.random();
+        document.body.appendChild(petal);
+      }
+    });
 
-    <label for="instrument">Choose an instrument:</label><br />
-    <select id="instrument" name="instrument">
-      <option value="guitar">Guitar</option>
-      <option value="piano">Piano</option>
-      <option value="drums">Drums</option>
-      <option value="ukulele">Ukulele</option>
-      <option value="trombone">Trombone</option>
-      <option value="kazoo">Kazoo</option>
-    </select><br />
+    // max wait 8 seconds to hide loader no matter what
+    setTimeout(() => {
+      const loader = document.getElementById("loading-screen");
+      if (!loader.classList.contains("hidden")) {
+        loader.classList.add("hidden");
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }
+    }, 8000);
+  </script>
 
-    <label for="experience">Tell us about your music experience:</label><br />
-    <textarea id="experience" name="experience" rows="4" cols="30" placeholder="Type your experience here..."></textarea><br />
-
-    <fieldset>
-      <legend>Preferred Days:</legend>
-      <label><input type="checkbox" name="days" value="monday"> Monday</label><br />
-      <label><input type="checkbox" name="days" value="wednesday"> Wednesday</label><br />
-      <label><input type="checkbox" name="days" value="friday"> Friday</label>
-    </fieldset>
-
-    <label for="referrer">How did you hear about us?</label><br />
-    <input list="sources" id="referrer" name="referrer" />
-    <datalist id="sources">
-      <option value="Instagram">
-      <option value="TikTok">
-      <option value="Friend">
-      <option value="Ad">
-    </datalist><br />
-
-    <button type="submit">Submit</button>
-  </form>
-</section>
 </body>
 </html>
