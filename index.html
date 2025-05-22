@@ -6,7 +6,13 @@
   <title>Khloe's Music Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
   <style>
-    /* Loading screen styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* 🌸 Loading screen styles */
     #loading-screen {
       position: fixed;
       top: 0; left: 0;
@@ -17,12 +23,15 @@
       justify-content: center;
       z-index: 9999;
       flex-direction: column;
+      opacity: 1;
       transition: opacity 0.5s ease;
     }
+
     #loading-screen.hidden {
       opacity: 0;
       pointer-events: none;
     }
+
     .loader {
       border: 10px solid #ffcce6;
       border-top: 10px solid #ff66b2;
@@ -32,17 +41,19 @@
       animation: spin 1s linear infinite;
       margin-bottom: 15px;
     }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
     .loading-text {
       font-family: 'Playfair Display', serif;
       color: #ff1a66;
       font-size: 20px;
     }
 
-    /* Floating petals */
+    /* 🌸 Petal styles */
     .petal {
       position: fixed;
       top: -40px;
@@ -50,11 +61,13 @@
       height: 20px;
       background-image: url('https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png');
       background-size: cover;
-      z-index: 1;
+      background-repeat: no-repeat;
+      z-index: 10;
       animation-name: fall;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
     }
+
     @keyframes fall {
       0% { transform: translateY(0) rotate(0deg); }
       100% { transform: translateY(100vh) rotate(360deg); }
@@ -63,14 +76,13 @@
     body {
       font-family: 'Playfair Display', serif;
       background-color: #fff0f5;
-      margin: 0;
-      padding: 0;
     }
 
     header {
       background-color: #ffccdd;
       padding: 20px;
       text-align: center;
+      z-index: 5;
     }
 
     header h1 {
@@ -86,11 +98,12 @@
       flex-wrap: wrap;
       padding: 10px 0;
       gap: 10px;
+      z-index: 5;
+      position: relative;
     }
 
     .dropdown {
       position: relative;
-      font-family: 'Playfair Display', serif;
     }
 
     .dropdown > button {
@@ -105,7 +118,6 @@
       transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     }
 
-    /* sparkly glowing hover on domain buttons */
     .dropdown > button:hover {
       background-color: #ff80bf;
       box-shadow: 0 0 10px #ff66b2, 0 0 20px #ff99cc;
@@ -135,7 +147,6 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* sliding sparkle effect on dropdown links */
     .dropdown-content a::after {
       content: '';
       position: absolute;
@@ -164,6 +175,8 @@
     main {
       text-align: center;
       padding: 30px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .flower-img {
@@ -268,28 +281,26 @@
       <li>Trombone</li>
       <li>Kazoo</li>
     </ul>
-
     <p style="margin-top: 40px;">Hover over a domain up top to explore THE Music Store. More coming soon!</p>
   </main>
 
-  <!-- ✨ Script for Loading & Petals -->
+  <!-- ✨ JS for Loading + Petals -->
   <script>
     window.addEventListener("load", function () {
       const loader = document.getElementById("loading-screen");
       loader.classList.add("hidden");
       setTimeout(() => {
-        loader.style.display = "none";
-      }, 500);
-
-      // 🌸 floating petals
-      for (let i = 0; i < 15; i++) {
-        const petal = document.createElement("div");
-        petal.classList.add("petal");
-        petal.style.left = Math.random() * 100 + "vw";
-        petal.style.animationDuration = 5 + Math.random() * 5 + "s";
-        petal.style.opacity = Math.random();
-        document.body.appendChild(petal);
-      }
+        loader.remove();
+        // 🌸 make petals fall AFTER loading screen is gone
+        for (let i = 0; i < 20; i++) {
+          const petal = document.createElement("div");
+          petal.classList.add("petal");
+          petal.style.left = Math.random() * 100 + "vw";
+          petal.style.animationDuration = 5 + Math.random() * 5 + "s";
+          petal.style.opacity = 0.6 + Math.random() * 0.4;
+          document.body.appendChild(petal);
+        }
+      }, 600);
     });
   </script>
 
