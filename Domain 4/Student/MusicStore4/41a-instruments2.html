@@ -1,15 +1,54 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>THE Music Store</title>
+  <meta charset="UTF-8" />
+  <title>Featured Instruments - Music Store</title>
+  <style>
+    body {
+      font-family: 'playfair display', serif;
+      background-color: #ffe6f0;
+      color: #b30059;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    td {
+      padding: 10px;
+      vertical-align: top;
+    }
+    img {
+      border: 2px solid #b30059;
+      border-radius: 8px;
+    }
+    a {
+      color: #b30059;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <h2>Featured Instruments</h2>
-    <img src="Images/mandolin.jpg" width="460" height="345" alt="mandolin" />
-    <p>Mandolin</p>
-    <img src="Images/trombone.jpg" width="460" height="345" alt="trombone" />
-    <p>Trombone</p>
-    <p>Click the Mandolin to see a bigger picture of it.</p>
+
+  <h2>Featured Instruments</h2>
+
+  <table>
+    <tr>
+      <td>
+        <a href="images/mandolincloseup.jpg">
+          <img src="images/mandolin.jpg" width="460" height="345" alt="mandolin" />
+        </a>
+      </td>
+      <td>
+        <img src="images/trombone.jpg" width="460" height="345" alt="trombone" />
+      </td>
+    </tr>
+    <tr>
+      <td>Mandolin</td>
+      <td>Trombone</td>
+    </tr>
+  </table>
+
 </body>
 </html>
