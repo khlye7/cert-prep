@@ -1,29 +1,33 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+  <meta charset="UTF-8" />
+  <title>Media - Video Example</title>
+  <style>
+    body {
+      font-family: 'playfair display', serif;
+      background-color: #ffe6f0;
+      color: #b30059;
+      margin: 20px;
+    }
+    video {
+      border: 3px solid #b30059;
+      border-radius: 12px;
+      display: block;
+      margin-top: 10px;
+      max-width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <canvas id="canvasTest" width="200" height="200" style="border: 2px solid black;"></canvas>
-    
-    
-    <script type="text/javascript">
-    function loadCanvas() {
-        var cvs = document.getElementById("canvasTest");
-        context = cvs.getContext("2d");
-        context.font = "12pt Arial";
-        context.fillText("THE Music Store", 10, 140);
 
-        var grad = context.createLinearGradient(0, 0, 100, 0);
-        grad.addColorStop(0.25, "rgb(255,100,255)");
-        grad.addColorStop(0.75, "rgb(0,155,0)");
+  <p>See this cool close-up of a piano player.</p>
 
+  <video height="480" controls>
+    <source src="Videos/Happy.mp4" type="video/mp4" />
+    <source src="Videos/Happy.mov" type="video/quicktime" />
+    Your browser does not support the video tag.
+  </video>
 
-        context.fillStyle = grad;
-        context.fillRect(10, 20, 100, 100)
-
-    }
-    </script>
 </body>
 </html>
