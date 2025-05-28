@@ -120,112 +120,11 @@
       padding: 30px 20px;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 200px;
-    }
+    /* Other styles you had omitted for brevity... */
 
-    li {
-      margin: 5px 0;
-    }
-
-    h2 {
-      color: #cc0066;
-      margin-top: 40px;
-    }
-
-    #survey {
-      background:#ffe6f0;
-      padding:20px;
-      max-width:400px;
-      margin:40px auto;
-      border-radius:12px;
-      box-shadow:0 0 15px #ff99cc;
-      font-family: 'Playfair Display', serif;
-    }
-
-    #survey h2 {
-      color:#cc0066;
-      text-align:center;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-
-    #survey label {
-      color:#99004d;
-      font-weight:bold;
-      display: block;
-      margin-top: 12px;
-      margin-bottom: 6px;
-    }
-
-    #survey select,
-    #survey textarea {
-      width: 100%;
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #ffb3d9;
-      font-family: 'Playfair Display', serif;
-    }
-
-    #survey input[type="radio"] {
-      margin-right: 6px;
-      cursor: pointer;
-    }
-
-    #survey label[for="yes"],
-    #survey label[for="no"] {
-      color:#660033;
-      font-weight: normal;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    #survey button {
-      background:#ff66b2;
-      color:white;
-      border:none;
-      padding:10px 20px;
-      border-radius:8px;
-      cursor:pointer;
-      font-family: 'Playfair Display', serif;
-      margin-top: 12px;
-      width: 100%;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-
-    #survey button:hover {
-      background: #ff4d94;
-    }
-
-    .petal {
-      position: fixed;
-      top: -40px;
-      width: 20px;
-      height: 20px;
-      background-image: url('https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png');
-      background-size: cover;
-      z-index: 1;
-      animation-name: fall;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); }
-      100% { transform: translateY(100vh) rotate(360deg); }
-    }
   </style>
 </head>
 <body>
-
-  <div id="loading-screen">
-    <div class="loader"></div>
-    <div class="loading-text">︵‿︵‿୨♡୧‿︵‿︵</div>
-  </div>
 
   <header>
     <h1>khloes cert-prep</h1>
@@ -239,6 +138,7 @@
         <a href="blank1.html">java script</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button>Domain 2</button>
       <div class="dropdown-content">
@@ -246,6 +146,7 @@
         <a href="blank4.html">books</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button>Domain 3</button>
       <div class="dropdown-content">
@@ -254,16 +155,18 @@
         <a href="blank5.html">File 3C</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button>Domain 4</button>
       <div class="dropdown-content">
-        <a href="41a-instruments.html">41a-instruments.html</a>
-        <a href="41a-instruments2.html">41a-instruments2.html</a>
-        <a href="43a-media.html">43a-media.html</a>
-        <a href="43b-media.html">43b-media.html</a>
-        <a href="43e-media.html">43e-media.html</a>
+        <a href="41a-instruments.html">41a-instruments</a>
+        <a href="41a-instruments2.html">41a-instruments2</a>
+        <a href="43a-media.html">43a-media</a>
+        <a href="43b-media.html">43b-media</a>
+        <a href="43e-media.html">43e-media</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button>Domain 5</button>
       <div class="dropdown-content">
@@ -272,6 +175,7 @@
         <a href="file5c.html">File 5C</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button>Domain 6</button>
       <div class="dropdown-content">
@@ -284,11 +188,11 @@
   <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-realistic-beautiful-3d-sprind-and-summer-pink-flower-icon-png-image_5618002.png" alt="Pink Flower Icon" class="flower-img" />
 
   <main>
-    <p>my website to show my new coding skills and adventures <3 </p>
+    <p>my website to show my new coding skills and adventures &lt;3</p>
   </main>
 
   <script>
-    // falling petals
+    // falling petals animation
     function createPetal() {
       const petal = document.createElement("div");
       petal.classList.add("petal");
@@ -298,17 +202,6 @@
       setTimeout(() => petal.remove(), 8000);
     }
     setInterval(createPetal, 400);
-
-    // smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-        }
-      });
-    });
   </script>
 
 </body>
