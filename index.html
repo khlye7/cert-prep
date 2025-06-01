@@ -222,11 +222,6 @@
 </head>
 <body>
 
-  <div id="loading-screen">
-    <div class="loader"></div>
-    <div class="loading-text">︵‿︵‿୨♡୧‿︵‿︵</div>
-  </div>
-
   <header>
     <h1>khloes cert-prep</h1>
   </header>
@@ -236,22 +231,22 @@
       <button>Domain 1</button>
       <div class="dropdown-content">
         <a href="style-sheet.html">style sheets</a>
-        <a href="blank1.html">java script</a>
+        <a href="java-script.html">java script</a>
       </div>
     </div>
     <div class="dropdown">
       <button>Domain 2</button>
       <div class="dropdown-content">
-        <a href="blank3.html">musicstore</a>
-        <a href="blank4.html">books</a>
+        <a href="musicstore.html">musicstore</a>
+        <a href="books.html">books</a>
       </div>
     </div>
     <div class="dropdown">
       <button>Domain 3</button>
       <div class="dropdown-content">
-        <a href="blank5.html">File 3A</a>
-        <a href="blank5.html">File 3B</a>
-        <a href="blank5.html">File 3C</a>
+        <a href="file3a.html">File 3A</a>
+        <a href="file3b.html">File 3B</a>
+        <a href="file3c.html">File 3C</a>
       </div>
     </div>
     <div class="dropdown">
@@ -288,7 +283,6 @@
   </main>
 
   <script>
-    // falling petals
     function createPetal() {
       const petal = document.createElement("div");
       petal.classList.add("petal");
@@ -299,7 +293,6 @@
     }
     setInterval(createPetal, 400);
 
-    // smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function(e) {
         e.preventDefault();
